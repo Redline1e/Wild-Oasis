@@ -5,13 +5,33 @@ import { updateGuest } from "../_lib/actions";
 import SubmitButton from "./SubmitButton";
 
 function UpdateProfileForm({ guest, children }) {
-  const [count, setCount] = useState();
+  const [error, setError] = useState(null);
 
   const { fullName, email, nationality, nationalID, countryFlag } = guest;
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    const nationalityField = formData.get("nationality");
+    const nationalIDValue = formData.get("nationalID");
+
+    if (
+      !nationalityField ||
+      !nationalityField.includes("%") ||
+      (nationalityField && !nationalIDValue)
+    ) {
+      setError("Please provide both country flag and national ID.");
+      return;
+    }
+
+    setError(null);
+    await updateGuest(formData);
+  };
+
   return (
     <form
-      action={updateGuest}
+      onSubmit={handleSubmit}
       className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col"
     >
       <div className="space-y-2">
@@ -55,6 +75,8 @@ function UpdateProfileForm({ guest, children }) {
           className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
         />
       </div>
+
+      {error && <div className="text-red-500 text-sm">{error}</div>}
 
       <div className="flex justify-end items-center gap-6">
         <SubmitButton pendingLabel="Updating...">Update profile</SubmitButton>
