@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Wild-oasis
 
-## Getting Started
+**Wild-oasis** is a modern web-based application designed for dynamic and efficient user interaction. This project utilizes cutting-edge web technologies to provide an optimal user experience.
 
-First, run the development server:
+## Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Check out the live demo: [EcoCabins](https://wild-oasis-three.vercel.app/)
+
+## Technologies Used
+
+- **Frontend**
+  - **Next.js** (App Router)
+  - **Tailwind CSS** for styling
+- **Database**
+  - **Supabase** (shared with the admin app)
+- **Authentication**
+  - **NextAuth.js** with Google sign-in
+- **Utilities**
+  - **Date-fns** for date handling
+
+## Features
+
+- View all available cabins with detailed descriptions and images.
+- Book a cabin for specific dates and select the number of guests.
+- Sign in with Google to manage your bookings securely.
+- Manage your reservations: view, edit, or cancel bookings.
+- Update your personal profile information.
+- Fully responsive and mobile-friendly for an optimal experience.
+
+
+## Project Structure
+
+```plaintext
+Wild-Oasis-main/
+├── app/                # Main application pages and layouts
+├── public/             # Static assets (images, fonts, etc.)
+├── middleware.js       # Middleware for requests
+├── next.config.mjs     # Next.js configuration
+├── tailwind.config.mjs # Tailwind CSS configuration
+├── package.json        # Node.js dependencies
+└── .gitignore          # Ignored files for Git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to Run
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Clone the repository or download the project files:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    ```bash
+    git clone <repository-url>
+    cd Wild-Oasis-main
+    ```
 
-## Learn More
+2. Install dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+    ```bash
+    npm install
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Start the development server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    ```bash
+    npm run dev
+    ```
 
-## Deploy on Vercel
+4. To build the application for production:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```bash
+    npm run build
+    npm start
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Screenshots
+
+## Screenshots
+
+### Home Page
+![Dashboard](https://github.com/Redline1e/Wild-Oasis/blob/main/public/screenshots/dashboard.png)
+
+### Cabin Page
+![Cabin](https://github.com/Redline1e/Wild-Oasis/blob/main/public/screenshots/cabin.png)
+
+### User Edit Page
+![Transactions](https://github.com/Redline1e/Wild-Oasis/blob/main/public/screenshots/user-edit.png)
