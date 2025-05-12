@@ -4,7 +4,7 @@
 
 ## Live Demo
 
-Check out the live demo: [EcoCabins](https://wild-oasis-three.vercel.app/)
+Check out the live demo: [Wild-oasis](https://wild-oasis-three.vercel.app/)
 
 ## Technologies Used
 
